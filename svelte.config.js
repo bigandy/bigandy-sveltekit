@@ -1,11 +1,13 @@
-import adapter from '@sveltejs/adapter-auto';
+import netlify from '@sveltejs/adapter-netlify';
+
+// import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter(),
+		adapter: netlify({ edge: true }),
 		alias: {
 			$lib: './src/lib',
 			$components: './src/components',
