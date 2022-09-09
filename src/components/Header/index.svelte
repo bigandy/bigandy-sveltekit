@@ -1,10 +1,18 @@
-<style>
+<header>
+	<nav>
+		<a href="/">Home</a>
+		<a href="/about">About</a>
+		<a href="/blog">Blog</a>
+	</nav>
+</header>
+
+<style lang="scss">
 	header {
-	  padding: 1rem;
-	  background: lightskyblue;
-	  display: flex;
-	  flex-wrap: wrap;
-	  justify-content: space-between;
+		background: lightskyblue;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 0;
 	}
 
 	a {
@@ -12,12 +20,11 @@
 		text-decoration: none;
 		color: inherit;
 		margin-inline-end: 1rem;
-	}
-	</style>
+		padding: 1rem;
 
-<header>
-	<nav>
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-	</nav>
-</header>
+		&:hover {
+			background: red;
+			color: white;
+		}
+	}
+</style>
