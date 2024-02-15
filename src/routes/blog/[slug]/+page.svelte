@@ -1,10 +1,17 @@
 <!-- src/routes/[slug]/+page.svelte -->
 <script>
+	import Published from '$components/Published.svelte';
+
 	export let data;
+
+	const {
+		date, 
+		title
+	} = data;
 </script>
 
 <article>
-	<h1>{data.title}</h1>
-	<p>Published: {data.date}</p>
+	<h1>{title}</h1>
+	<Published date={date} />
 	<svelte:component this={data.content} />
 </article>

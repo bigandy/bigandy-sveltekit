@@ -1,6 +1,11 @@
 <!-- src/routes/blog/+page.svelte -->
 <script>
+
+	import Published from '$components/Published.svelte';
+	
 	export let data;
+
+	
 </script>
 
 <h1>Blog</h1>
@@ -13,7 +18,7 @@
 					{post.meta.title}
 				</a>
 			</h2>
-			Published {post.meta.date}
+			<Published date={post.meta.date} />
 			<hr />
 		</li>
 	{/each}
