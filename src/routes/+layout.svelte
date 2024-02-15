@@ -1,6 +1,6 @@
 <!-- +layout.svelte -->
 <script>
-	import Header from '$components/Header/index.svelte';
+	import Header from '$components/Header.svelte';
 	import '$styles/style.scss';
 </script>
 
