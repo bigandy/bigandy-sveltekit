@@ -4,10 +4,13 @@ import { json } from '@sveltejs/kit';
 export const GET = async () => {
 	const allPosts = await fetchMarkdownPosts();
 
-	// console.log({allPosts: allPosts.map(p => p.meta.date)});
+	const pastPosts = allPosts.filter(post => {
+		const now = new Date();
+		return new Date(post.meta.date) <= now;
+	})
 
-	const sortedPosts = allPosts.sort((a, b) => {
-		return new Date(b.meta.date) - new Date(a.meta.date);
+	const sortedPosts = pastPosts.sort((a, b) => {
+		return Number(new Date(b.meta.date)) - Number(new Date(a.meta.date));
 	});
 
 	return json(sortedPosts);
