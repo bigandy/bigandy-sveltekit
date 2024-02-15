@@ -3,9 +3,11 @@ import { error } from '@sveltejs/kit';
 // src/routes/blog/[slug]/+page.js
 export async function load({ url }) {
 	
+	const fileName = url.pathname.replace('/blog', '');
+
 	const post = await import(
 		/* @vite-ignore */
-		`/src/routes${url.pathname}.md`
+		`../${fileName}.md`
 	);
 
 	if (post) {
