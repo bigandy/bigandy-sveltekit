@@ -9,7 +9,11 @@ export const GET = async () => {
 		return new Date(post.meta.date) <= now;
 	})
 
-	const sortedPosts = pastPosts.sort((a, b) => {
+	const removeDraftPostsInProduction = pastPosts.filter(post => {
+		return import.meta.env.DEV || !post.meta.draft;
+	})
+
+	const sortedPosts = removeDraftPostsInProduction.sort((a, b) => {
 		return Number(new Date(b.meta.date)) - Number(new Date(a.meta.date));
 	});
 
