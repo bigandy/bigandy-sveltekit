@@ -1,11 +1,8 @@
 <!-- src/routes/blog/+page.svelte -->
 <script>
-
 	import Published from '$components/Published.svelte';
-	
-	export let data;
 
-	
+	export let data;
 </script>
 
 <h1>Blog</h1>
@@ -23,3 +20,20 @@
 		</li>
 	{/each}
 </ul>
+
+<style>
+	ul {
+		list-style: none;
+		padding-left: 0;
+	}
+
+	a {
+		text-decoration: none;
+		color: orangered;
+	}
+
+	a:hover {
+		color: color-mix(in lch, orangered 70%, orange);
+		text-decoration: underline;
+	}
+</style>

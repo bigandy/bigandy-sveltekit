@@ -9,21 +9,27 @@
 <style lang="scss">
 	header {
 		background: lightskyblue;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
+
 		padding: 0;
 	}
 
+	nav {
+		justify-content: space-around;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
 	a {
-		display: inline-block;
+		flex: 1;
+		// background: red;
+		text-align: center;
+		// display: inline-block;
 		text-decoration: none;
 		color: inherit;
-		margin-inline-end: 1rem;
 		padding: 1rem;
 
 		&:hover {
-			background: red;
+			background: hotpink;
 			color: white;
 		}
 	}

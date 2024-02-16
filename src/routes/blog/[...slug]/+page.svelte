@@ -4,14 +4,11 @@
 
 	export let data;
 
-	const {
-		date, 
-		title
-	} = data;
+	const { date, title } = data;
 </script>
 
 <article>
 	<h1>{title}</h1>
-	<Published date={date} />
+	<Published {date} />
 	<svelte:component this={data.content} />
 </article>
