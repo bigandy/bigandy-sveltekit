@@ -34,5 +34,8 @@
 		"vite": "5.1.2",
 		"vitest": "1.2.2"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@fontsource/inter": "5.0.16"
+	}
 }
