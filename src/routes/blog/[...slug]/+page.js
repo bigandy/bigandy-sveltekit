@@ -2,11 +2,18 @@ import { error } from '@sveltejs/kit';
 
 // src/routes/blog/[slug]/+page.js
 export async function load({ url }) {
-	
-	const post = await import(
-		/* @vite-ignore */
-		`/src/routes${url.pathname}.md`
-	);
+	const sections = url.pathname.split('/').filter(Boolean);
+	let post;
+
+	if (sections.length === 4) {
+		post = await import(
+			`../../../content/blog/${sections.at(-3)}/${sections.at(-2)}/${sections.at(-1)}.md`
+		);
+	} else if (sections.length === 3) {
+		post = await import(`../../../content/blog/${sections.at(-2)}/${sections.at(-1)}.md`);
+	} else {
+		post = await import(`../../../content/blog/${sections.at(-1)}.md`);
+	}
 
 	if (post) {
 		const { title, date } = post.metadata;
@@ -18,6 +25,5 @@ export async function load({ url }) {
 			date
 		};
 	}
-	error(414, "Post not found");
-
+	error(414, 'Post not found');
 }
