@@ -30,10 +30,10 @@
 	a {
 		text-decoration: none;
 		color: orangered;
-	}
 
-	a:hover {
-		color: color-mix(in lch, orangered 70%, orange);
-		text-decoration: underline;
+		&:hover {
+			color: color-mix(in lch, orangered 70%, orange);
+			text-decoration: underline;
+		}
 	}
 </style>

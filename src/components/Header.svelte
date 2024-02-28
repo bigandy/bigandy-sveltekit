@@ -6,7 +6,7 @@
 	</nav>
 </header>
 
-<style lang="scss">
+<style>
 	header {
 		background: lightskyblue;
 
@@ -21,9 +21,7 @@
 
 	a {
 		flex: 1;
-		// background: red;
 		text-align: center;
-		// display: inline-block;
 		text-decoration: none;
 		color: inherit;
 		padding: 1rem;
